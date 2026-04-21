@@ -75,7 +75,22 @@ API docs:
 - `POST /predict`
 - `POST /forecast`
 
-## 5) How to Use (Streamlit)
+## 5) Run with Docker (FastAPI)
+
+Build image:
+```bash
+docker build -t universal-ml-predictor .
+```
+
+Run container:
+```bash
+docker run --rm -p 8000:8000 universal-ml-predictor
+```
+
+API docs in browser:
+- `http://127.0.0.1:8000/docs`
+
+## 6) How to Use (Streamlit)
 
 1. Upload a CSV file.
 2. Choose the target column (value you want to predict).
@@ -99,13 +114,13 @@ If your dataset has a date column and historical target values:
 - Run reports are saved under `reports/`.
 - Files include metrics CSV, data profile CSV, and JSON summary.
 
-## 6) Notes for Multi-Domain Data
+## 7) Notes for Multi-Domain Data
 
 - You can upload different domains (sales, weather, etc.) as long as data is tabular CSV.
 - Model quality depends on the uploaded features and data quality.
 - For forecasting, future exogenous variables are not required because this implementation uses lag-based trend features of the target.
 
-## 7) Suggested GitHub Upload Steps
+## 8) Suggested GitHub Upload Steps
 
 ```bash
 git init
